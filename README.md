@@ -6,10 +6,14 @@
 
 ## Abstract
 This project aims to advance intelligent path planning for self-driving Unmanned Ground Vehicles (UGVs) through the application of Deep Reinforcement Learning (DRL). We employ algorithms such as Deep Deterministic Policy Gradient (DDPG) and Twin Delayed Deep Deterministic Policy Gradient (TD3) to enhance the decision-making capabilities of UGVs.
+We used CARLA Simulator for training purpose.CARLA requires 8GB VRAM to run. As of sensors, we kept our model simple due to the lack of high configuration workstatione as we were using rtx 2070 (8GB VRAM), which was fulfilling only minimum requirements. Following are the sensors we used to get the state of the environment
 
-## Sustainable Development Goals (SDGs)
-- **SDG 8**: Boosts economic growth by fostering innovation and creating high-end jobs.
-- **SDG 9**: Advances smart infrastructure and introduces innovation to existing infrastructure.
+1. Camera
+2. GNSS
+3. IMU
+
+We passed these sensors values to our models as representation of state.
+
 
 ## Block Diagram
 The system block diagram includes components such as IMU, GPS, Model, Camera, and more to facilitate intelligent path planning.
@@ -59,21 +63,10 @@ The system block diagram includes components such as IMU, GPS, Model, Camera, an
 - Provides realistic environments, varied weather, urban layouts, and traffic scenarios.
 - Supports integration with RL frameworks and a wide range of sensors.
 
-## Sensors & Hardware
-- **IMU (MPU 6050)**: Measures acceleration and angular velocity, supports up to 1 kHz refresh rate.
-- **GPS (GY-NEO6MV2)**: Provides accurate longitude and latitude data, with a refresh rate of 5 Hz.
-
-## Controllers
-- Communicates through WebSocket.
-- Integrates IMU and GPS data.
-- Processes live stream camera data.
-
-## UGV Specifications
-- Chassis with two 12V DC wiper motors.
-- Weighs around 8kg with a no-load speed of 45 RPM and power output of 14 Watts.
 
 ## PyQT GUI
 - Main window for autonomous and manual control.
+
 
 ## Results
 ### Training Process
